@@ -1,26 +1,11 @@
 <?php
 
-require('posterous.php');
+require('test_helper.php');
 
-class userModelTest extends PHPUnit_Framework_TestCase 
+class userModelTest extends PosterousTestCase 
 {
-	protected function run_protected_method ($method, $args = array())
-	{
-		$method = new ReflectionMethod(get_class($this->model), $method);
-		$method->setAccessible(true);
-
-		return $method->invokeArgs($this->model, $args);
-	}
-
-	protected function build_url($path)
-	{
-		return 'https://posterous.com/api/2/' . $path;
-	}
-
-	public function setUp ()
-	{
-		$this->model = new PosterousUserModel();
-	}
+	protected
+		$subject = 'PosterousUserModel';
 
 	public function test_parsed_resource_url ()
 	{
@@ -28,9 +13,18 @@ class userModelTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($this->build_url('users'), $result);
 	}
 
+	public function test_instance_url ()
+	{
+		$result = $this->run_protected_method('instance_url');
+		$this->assertEquals($this->build_url('users/me'), $result);
+	}
+
 	public function test_user_subscriptions ()
 	{
-		// ...
+		$this->model->set_attributes(array('id' => 42));
+
+		$subscriptions = $this->model->subscriptions->all();
+		print_r($subscriptions);
 	}
 }
 

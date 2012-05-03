@@ -12,6 +12,10 @@ class PosterousUserModel extends PosterousModel {
 	protected $has_many = array(
 		'subscriptions'
 	);
+
+	protected function instance_url($id = 0) {
+		return $this->parsed_resource_url() . '/me';
+	}
 }
 
 ?>

@@ -30,6 +30,7 @@ include_once('models/post.php');
 include_once('models/profile.php');
 include_once('models/site.php');
 include_once('models/subscriber.php');
+include_once('models/subscription.php');
 include_once('models/tag.php');
 include_once('models/user.php');
 
