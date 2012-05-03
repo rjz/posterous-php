@@ -11,6 +11,8 @@ class PosterousSiteModel extends PosterousModel
 	protected $resource = 'sites';
 
 	protected $has_many = array(
+		'contributors',
+		'subscribers',
 		'pages',
 		'posts',
 		'tags'

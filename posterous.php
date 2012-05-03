@@ -15,6 +15,7 @@
 // Base classes
 include_once('exception.php');
 include_once('model.php');
+include_once('proxy.php');
 
 if (!extension_loaded('curl')) 
 {

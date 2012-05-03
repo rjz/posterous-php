@@ -22,9 +22,7 @@ class userModelTest extends PosterousTestCase
 	public function test_user_subscriptions ()
 	{
 		$this->model->set_attributes(array('id' => 42));
-
-		$subscriptions = $this->model->subscriptions->all();
-		print_r($subscriptions);
+		//$subscriptions = $this->model->subscriptions;
 	}
 }
 

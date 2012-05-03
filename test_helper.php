@@ -2,6 +2,12 @@
 
 if (!class_exists('PosterousTestCase')):
 
+if (!defined('POSTEROUS_API_TOKEN'))
+	define('POSTEROUS_API_TOKEN', 'test_token');
+
+if (!defined('POSTEROUS_API_AUTHSTRING'))
+	define('POSTEROUS_API_AUTHSTRING', 'test@example.com:password');
+
 require('posterous.php');
 
 class PosterousTestCase extends PHPUnit_Framework_TestCase {

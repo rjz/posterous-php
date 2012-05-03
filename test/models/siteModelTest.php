@@ -24,10 +24,26 @@ class siteModelTest extends PosterousTestCase {
 		$this->assertEquals($this->build_url('sites/23'), $result);
 	}
 
-	public function test_user_subscriptions ()
+	public function test_relation_contributors ()
 	{
-		$subscriptions = $this->model->subscriptions->all();
-		print_r($subscriptions);
-	}}
+	}
+
+	public function test_relation_subscribers ()
+	{
+	}
+
+	public function test_relation_pages ()
+	{
+	}
+
+	public function test_relation_posts ()
+	{
+	}
+
+	public function test_relation_tags ()
+	{
+	}
+
+}
 
 ?>

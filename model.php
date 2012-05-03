@@ -157,29 +157,12 @@ class PosterousModel
 		}
 
 		// check if $key corresponds to a known plural resource
-		if (in_array($key, $this->has_many))
+		if (in_array($key, $this->has_many) || in_array($key, $this->has_one))
 		{
 			if (class_exists($class_name = $this->model_class_name($key)))
 			{
 				$obj = new $class_name(array(), $this);
-				return $obj->all();
-			}
-		}
-
-		// check if $key corresponds to a known single resource
-		else if (in_array($key, $this->has_one))
-		{
-			if (class_exists($class_name = $this->model_class_name($key)))
-			{
-				$obj = new $class_name(array(), $this);
-				$results = $obj->all();
-
-				if (count($results) == 1) 
-				{
-					return $results[0];
-				}
-
-				return null;
+				return $obj;
 			}
 		}
 

@@ -1,8 +1,9 @@
 <?php
 
-require('posterous.php');
+require('test_helper.php');
 
-class PosterousTestModel extends PosterousModel {
+class PosterousTestModel extends PosterousModel 
+{
 
 	protected $resource = 'tests';
 
@@ -20,7 +21,8 @@ class PosterousTestModel extends PosterousModel {
 	}
 }
 
-class PosterousRelativeModel extends PosterousModel {
+class PosterousRelativeModel extends PosterousModel 
+{
 
 	protected $resource = 'tests/:test_id/relatives';
 	
@@ -34,25 +36,11 @@ class PosterousRelativeModel extends PosterousModel {
 	}
 }
 
-class modelTest extends PHPUnit_Framework_TestCase {
+class modelTest extends PosterousTestCase 
+{
 
-	protected function run_protected_method ($method, $args = array())
-	{
-		$method = new ReflectionMethod('PosterousTestModel', $method);
-		$method->setAccessible(true);
-
-		return $method->invokeArgs($this->model, $args);
-	}
-
-	protected function build_url($path)
-	{
-		return 'https://posterous.com/api/2/' . $path;
-	}
-
-	public function setUp ()
-	{
-		$this->model = new PosterousTestModel();
-	}
+	protected
+		$subject = 'PosterousTestModel';
 
 	public function test_convert_attribute_key ()
 	{
@@ -178,7 +166,7 @@ class modelTest extends PHPUnit_Framework_TestCase {
 	{
 		$this->model->set_attributes(array('id' => 42));
 
-		$result = $this->model->relatives;
+		$result = $this->model->relatives->all();
 		$this->assertEquals('GET', $result['method']);
 		$this->assertEquals($this->build_url('tests/42/relatives'), $result['url']);
 	}
