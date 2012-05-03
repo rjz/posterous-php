@@ -2,8 +2,8 @@
 
 require('posterous.php');
 
-class tagModelTest extends PHPUnit_Framework_TestCase {
-
+class userModelTest extends PHPUnit_Framework_TestCase 
+{
 	protected function run_protected_method ($method, $args = array())
 	{
 		$method = new ReflectionMethod(get_class($this->model), $method);
@@ -19,13 +19,18 @@ class tagModelTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp ()
 	{
-		$this->model = new PosterousTagModel(array('site_id' => 42));
+		$this->model = new PosterousUserModel();
 	}
 
 	public function test_parsed_resource_url ()
 	{
 		$result = $this->run_protected_method('parsed_resource_url');
-		$this->assertEquals($this->build_url('sites/42/tags'), $result);
+		$this->assertEquals($this->build_url('users'), $result);
+	}
+
+	public function test_user_subscriptions ()
+	{
+		// ...
 	}
 }
 

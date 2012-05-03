@@ -23,8 +23,14 @@ if (!extension_loaded('curl'))
 
 // API Models
 include_once('models/comment.php');
+include_once('models/contributor.php');
 include_once('models/like.php');
+include_once('models/page.php');
 include_once('models/post.php');
+include_once('models/profile.php');
 include_once('models/site.php');
+include_once('models/subscriber.php');
+include_once('models/tag.php');
+include_once('models/user.php');
 
 ?>
