@@ -16,7 +16,7 @@ class siteModelTest extends PosterousTestCase {
 	public function test_instance_url ()
 	{
 		$result = $this->run_protected_method('instance_url');
-		$this->assertEquals($this->build_url('sites'), $result);
+		$this->assertEquals($this->build_url('sites/primary'), $result);
 
 		$this->model->set_attributes(array('id' => 23));
 
