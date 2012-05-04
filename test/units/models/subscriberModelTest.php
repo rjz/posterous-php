@@ -1,6 +1,6 @@
 <?php
 
-require('posterous.php');
+require('test_helper.php');
 
 class subscriberModelTest extends PHPUnit_Framework_TestCase {
 

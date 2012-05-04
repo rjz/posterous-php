@@ -169,6 +169,10 @@ class modelTest extends PosterousTestCase
 		$result = $this->model->relatives->all();
 		$this->assertEquals('GET', $result['method']);
 		$this->assertEquals($this->build_url('tests/42/relatives'), $result['url']);
+
+		$result = $this->model->relatives->find(14);
+		$this->assertEquals('GET', $result['method']);
+		$this->assertEquals($this->build_url('tests/42/relatives/14'), $result['url']);
 	}
 }
 

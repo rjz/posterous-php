@@ -1,6 +1,6 @@
 <?php
 
-require('posterous.php');
+require('test_helper.php');
 
 class tagModelTest extends PHPUnit_Framework_TestCase {
 

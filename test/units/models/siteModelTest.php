@@ -26,24 +26,43 @@ class siteModelTest extends PosterousTestCase {
 
 	public function test_relation_contributors ()
 	{
+		$this->model->set_attributes(array('id' => 42));
+		$contributors = $this->model->contributors;
+
+	    $this->assertEquals('PosterousContributorModel', get_class($contributors));
 	}
 
 	public function test_relation_subscribers ()
 	{
+		$this->model->set_attributes(array('id' => 42));
+		$subscribers = $this->model->subscribers;
+
+	    $this->assertEquals('PosterousSubscriberModel', get_class($subscribers));
 	}
 
 	public function test_relation_pages ()
 	{
+		$this->model->set_attributes(array('id' => 42));
+		$pages = $this->model->pages;
+
+	    $this->assertEquals('PosterousPageModel', get_class($pages));
 	}
 
 	public function test_relation_posts ()
 	{
+		$this->model->set_attributes(array('id' => 42));
+		$posts = $this->model->posts;
+
+	    $this->assertEquals('PosterousPostModel', get_class($posts));
 	}
 
 	public function test_relation_tags ()
 	{
-	}
+		$this->model->set_attributes(array('id' => 42));
+		$tags = $this->model->tags;
 
+	    $this->assertEquals('PosterousTagModel', get_class($tags));
+	}
 }
 
 ?>
