@@ -26,8 +26,8 @@ Reference
 
 Get all posts from primary site:
 
-    $site = new PosterousSiteModel(array('id' => 'primary'));
-    $posts = $site->posts();
+    $site = new PosterousSiteModel();
+    $posts = $site->posts->all();
 
 Save a post:
 
@@ -61,7 +61,7 @@ Todo
 
 * Complete implementation
    - Complete models
-   - Association lookups/proxying
+   - Association lookups
    - API responses
 * Expand test coverage
 * Write documentation
