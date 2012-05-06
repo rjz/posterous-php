@@ -56,6 +56,21 @@ Delete a post:
     $post = new PosterousPostModel(array('site_id' => 12345, 'id' => 1234567));
     $post->delete();
 
+Resource Types Supported
+-------------------
+
+* Comment
+* Contributor
+* Like
+* Page
+* Post
+* Profile
+* Site
+* Subscriber
+* Subscription
+* Tag
+* User
+
 Todo
 ----
 
