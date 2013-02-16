@@ -1,3 +1,7 @@
+### IMPORTANT:
+
+As of 30 April 2012, [Posterous is shutting down](http://blog.posterous.com/thanks-from-posterous). This repository will remain up for some time as a point of reference, but will be rendered unusable in the very near future.
+
 A quick and dirty PHP wrapper for the [Posterous API](https://posterous.com/api) that riffs pretty heavily on [the official gem](https://github.com/posterous/posterous-gem).
 
 *This project provides a very rough outline of a few key pieces of the API.* If you're willing to contribute, please don't hesitate to fork and submit a pull request or two!
